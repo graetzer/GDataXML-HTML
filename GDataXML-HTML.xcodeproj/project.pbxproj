@@ -1,0 +1,286 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F43A13C813CF10F300FD689C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F43A13C713CF10F300FD689C /* UIKit.framework */; };
+		F43A13CA13CF10F300FD689C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F43A13C913CF10F300FD689C /* Foundation.framework */; };
+		F43A13CC13CF10F300FD689C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F43A13CB13CF10F300FD689C /* CoreGraphics.framework */; };
+		F43A13D213CF10F300FD689C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F43A13D013CF10F300FD689C /* InfoPlist.strings */; };
+		F43A13D513CF10F300FD689C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F43A13D413CF10F300FD689C /* main.m */; };
+		F43A13D813CF10F300FD689C /* GDataXML_HTMLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F43A13D713CF10F300FD689C /* GDataXML_HTMLAppDelegate.m */; };
+		F43A13DB13CF10F300FD689C /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = F43A13D913CF10F300FD689C /* MainWindow.xib */; };
+		F43A13DE13CF10F300FD689C /* GDataXML_HTMLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F43A13DD13CF10F300FD689C /* GDataXML_HTMLViewController.m */; };
+		F43A13E113CF10F300FD689C /* GDataXML_HTMLViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F43A13DF13CF10F300FD689C /* GDataXML_HTMLViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F43A13C313CF10F300FD689C /* GDataXML-HTML.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GDataXML-HTML.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F43A13C713CF10F300FD689C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F43A13C913CF10F300FD689C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F43A13CB13CF10F300FD689C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F43A13CF13CF10F300FD689C /* GDataXML-HTML-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GDataXML-HTML-Info.plist"; sourceTree = "<group>"; };
+		F43A13D113CF10F300FD689C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F43A13D313CF10F300FD689C /* GDataXML-HTML-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GDataXML-HTML-Prefix.pch"; sourceTree = "<group>"; };
+		F43A13D413CF10F300FD689C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F43A13D613CF10F300FD689C /* GDataXML_HTMLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GDataXML_HTMLAppDelegate.h; sourceTree = "<group>"; };
+		F43A13D713CF10F300FD689C /* GDataXML_HTMLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDataXML_HTMLAppDelegate.m; sourceTree = "<group>"; };
+		F43A13DA13CF10F300FD689C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		F43A13DC13CF10F300FD689C /* GDataXML_HTMLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GDataXML_HTMLViewController.h; sourceTree = "<group>"; };
+		F43A13DD13CF10F300FD689C /* GDataXML_HTMLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDataXML_HTMLViewController.m; sourceTree = "<group>"; };
+		F43A13E013CF10F300FD689C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/GDataXML_HTMLViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F43A13C013CF10F300FD689C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F43A13C813CF10F300FD689C /* UIKit.framework in Frameworks */,
+				F43A13CA13CF10F300FD689C /* Foundation.framework in Frameworks */,
+				F43A13CC13CF10F300FD689C /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F43A13B813CF10F200FD689C = {
+			isa = PBXGroup;
+			children = (
+				F43A13CD13CF10F300FD689C /* GDataXML-HTML */,
+				F43A13C613CF10F300FD689C /* Frameworks */,
+				F43A13C413CF10F300FD689C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F43A13C413CF10F300FD689C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F43A13C313CF10F300FD689C /* GDataXML-HTML.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F43A13C613CF10F300FD689C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F43A13C713CF10F300FD689C /* UIKit.framework */,
+				F43A13C913CF10F300FD689C /* Foundation.framework */,
+				F43A13CB13CF10F300FD689C /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F43A13CD13CF10F300FD689C /* GDataXML-HTML */ = {
+			isa = PBXGroup;
+			children = (
+				F43A13D613CF10F300FD689C /* GDataXML_HTMLAppDelegate.h */,
+				F43A13D713CF10F300FD689C /* GDataXML_HTMLAppDelegate.m */,
+				F43A13D913CF10F300FD689C /* MainWindow.xib */,
+				F43A13DC13CF10F300FD689C /* GDataXML_HTMLViewController.h */,
+				F43A13DD13CF10F300FD689C /* GDataXML_HTMLViewController.m */,
+				F43A13DF13CF10F300FD689C /* GDataXML_HTMLViewController.xib */,
+				F43A13CE13CF10F300FD689C /* Supporting Files */,
+			);
+			path = "GDataXML-HTML";
+			sourceTree = "<group>";
+		};
+		F43A13CE13CF10F300FD689C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F43A13CF13CF10F300FD689C /* GDataXML-HTML-Info.plist */,
+				F43A13D013CF10F300FD689C /* InfoPlist.strings */,
+				F43A13D313CF10F300FD689C /* GDataXML-HTML-Prefix.pch */,
+				F43A13D413CF10F300FD689C /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F43A13C213CF10F300FD689C /* GDataXML-HTML */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F43A13E413CF10F300FD689C /* Build configuration list for PBXNativeTarget "GDataXML-HTML" */;
+			buildPhases = (
+				F43A13BF13CF10F300FD689C /* Sources */,
+				F43A13C013CF10F300FD689C /* Frameworks */,
+				F43A13C113CF10F300FD689C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "GDataXML-HTML";
+			productName = "GDataXML-HTML";
+			productReference = F43A13C313CF10F300FD689C /* GDataXML-HTML.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F43A13BA13CF10F200FD689C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Cyber:con GmbH";
+			};
+			buildConfigurationList = F43A13BD13CF10F200FD689C /* Build configuration list for PBXProject "GDataXML-HTML" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F43A13B813CF10F200FD689C;
+			productRefGroup = F43A13C413CF10F300FD689C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F43A13C213CF10F300FD689C /* GDataXML-HTML */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F43A13C113CF10F300FD689C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F43A13D213CF10F300FD689C /* InfoPlist.strings in Resources */,
+				F43A13DB13CF10F300FD689C /* MainWindow.xib in Resources */,
+				F43A13E113CF10F300FD689C /* GDataXML_HTMLViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F43A13BF13CF10F300FD689C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F43A13D513CF10F300FD689C /* main.m in Sources */,
+				F43A13D813CF10F300FD689C /* GDataXML_HTMLAppDelegate.m in Sources */,
+				F43A13DE13CF10F300FD689C /* GDataXML_HTMLViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F43A13D013CF10F300FD689C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F43A13D113CF10F300FD689C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F43A13D913CF10F300FD689C /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F43A13DA13CF10F300FD689C /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		F43A13DF13CF10F300FD689C /* GDataXML_HTMLViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F43A13E013CF10F300FD689C /* en */,
+			);
+			name = GDataXML_HTMLViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F43A13E213CF10F300FD689C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F43A13E313CF10F300FD689C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		F43A13E513CF10F300FD689C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GDataXML-HTML/GDataXML-HTML-Prefix.pch";
+				INFOPLIST_FILE = "GDataXML-HTML/GDataXML-HTML-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F43A13E613CF10F300FD689C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GDataXML-HTML/GDataXML-HTML-Prefix.pch";
+				INFOPLIST_FILE = "GDataXML-HTML/GDataXML-HTML-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F43A13BD13CF10F200FD689C /* Build configuration list for PBXProject "GDataXML-HTML" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F43A13E213CF10F300FD689C /* Debug */,
+				F43A13E313CF10F300FD689C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F43A13E413CF10F300FD689C /* Build configuration list for PBXNativeTarget "GDataXML-HTML" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F43A13E513CF10F300FD689C /* Debug */,
+				F43A13E613CF10F300FD689C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F43A13BA13CF10F200FD689C /* Project object */;
+}
