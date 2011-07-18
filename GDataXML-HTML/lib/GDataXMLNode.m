@@ -1,5 +1,8 @@
 /* Copyright (c) 2008 Google Inc.
  *
+ * Modifications for HTML parser support:
+ * Copyright (C) 2011 Simon Grätzer simon@graetzer.org
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -21,6 +24,7 @@
 
 
 static const int kGDataXMLParseOptions = (XML_PARSE_NOCDATA | XML_PARSE_NOBLANKS);
+static const int kGDataHTMLParseOptions = (HTML_PARSE_NOWARNING | HTML_PARSE_NOERROR);
 
 // dictionary key callbacks for string cache
 static const void *StringCacheKeyRetainCallBack(CFAllocatorRef allocator, const void *str);
@@ -947,7 +951,7 @@ static xmlChar *SplitQNameReverse(const xmlChar *qname, xmlChar **prefix) {
         // NOTE: We are assuming a string length that fits into an int
         xmlDocPtr doc = htmlReadMemory(utf8Str, (int)strlen(utf8Str), NULL, // URL
                                       NULL, // encoding
-                                      HTML_PARSE_NOWARNING | HTML_PARSE_NOERROR);
+                                      kGDataHTMLParseOptions);
         if (doc == NULL) {
             if (error) {
                 // TODO(grobbins) use xmlSetGenericErrorFunc to capture error
@@ -1693,7 +1697,7 @@ static xmlChar *SplitQNameReverse(const xmlChar *qname, xmlChar **prefix) {
         const char *encoding = NULL;
         
         // NOTE: We are assuming [data length] fits into an int.
-        xmlDoc_ = htmlReadMemory((const char*)[data bytes], (int)[data length], baseURL, encoding, HTML_PARSE_NOWARNING | HTML_PARSE_NOERROR);
+        xmlDoc_ = htmlReadMemory((const char*)[data bytes], (int)[data length], baseURL, encoding, kGDataHTMLParseOptions);
         if (xmlDoc_ == NULL) {
             if (error) {
                 *error = [NSError errorWithDomain:@"com.google.GDataXML"

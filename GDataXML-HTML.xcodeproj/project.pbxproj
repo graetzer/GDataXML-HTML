@@ -16,6 +16,9 @@
 		F43A13DB13CF10F300FD689C /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = F43A13D913CF10F300FD689C /* MainWindow.xib */; };
 		F43A13DE13CF10F300FD689C /* GDataXML_HTMLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F43A13DD13CF10F300FD689C /* GDataXML_HTMLViewController.m */; };
 		F43A13E113CF10F300FD689C /* GDataXML_HTMLViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F43A13DF13CF10F300FD689C /* GDataXML_HTMLViewController.xib */; };
+		F4E0EDE313CF3A2F000E7B3B /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E0EDE213CF3A2F000E7B3B /* GDataXMLNode.m */; };
+		F4E0EDE613CF7A37000E7B3B /* xml.xml in Resources */ = {isa = PBXBuildFile; fileRef = F4E0EDE513CF7A37000E7B3B /* xml.xml */; };
+		F4E0EDE813CF7C31000E7B3B /* html.html in Resources */ = {isa = PBXBuildFile; fileRef = F4E0EDE713CF7C31000E7B3B /* html.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +36,10 @@
 		F43A13DC13CF10F300FD689C /* GDataXML_HTMLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GDataXML_HTMLViewController.h; sourceTree = "<group>"; };
 		F43A13DD13CF10F300FD689C /* GDataXML_HTMLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDataXML_HTMLViewController.m; sourceTree = "<group>"; };
 		F43A13E013CF10F300FD689C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/GDataXML_HTMLViewController.xib; sourceTree = "<group>"; };
+		F4E0EDE113CF3A2F000E7B3B /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
+		F4E0EDE213CF3A2F000E7B3B /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
+		F4E0EDE513CF7A37000E7B3B /* xml.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = xml.xml; sourceTree = "<group>"; };
+		F4E0EDE713CF7C31000E7B3B /* html.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = html.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +86,7 @@
 		F43A13CD13CF10F300FD689C /* GDataXML-HTML */ = {
 			isa = PBXGroup;
 			children = (
+				F4E0EDE013CF3A2F000E7B3B /* lib */,
 				F43A13D613CF10F300FD689C /* GDataXML_HTMLAppDelegate.h */,
 				F43A13D713CF10F300FD689C /* GDataXML_HTMLAppDelegate.m */,
 				F43A13D913CF10F300FD689C /* MainWindow.xib */,
@@ -86,6 +94,8 @@
 				F43A13DD13CF10F300FD689C /* GDataXML_HTMLViewController.m */,
 				F43A13DF13CF10F300FD689C /* GDataXML_HTMLViewController.xib */,
 				F43A13CE13CF10F300FD689C /* Supporting Files */,
+				F4E0EDE513CF7A37000E7B3B /* xml.xml */,
+				F4E0EDE713CF7C31000E7B3B /* html.html */,
 			);
 			path = "GDataXML-HTML";
 			sourceTree = "<group>";
@@ -99,6 +109,15 @@
 				F43A13D413CF10F300FD689C /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F4E0EDE013CF3A2F000E7B3B /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				F4E0EDE113CF3A2F000E7B3B /* GDataXMLNode.h */,
+				F4E0EDE213CF3A2F000E7B3B /* GDataXMLNode.m */,
+			);
+			path = lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +173,8 @@
 				F43A13D213CF10F300FD689C /* InfoPlist.strings in Resources */,
 				F43A13DB13CF10F300FD689C /* MainWindow.xib in Resources */,
 				F43A13E113CF10F300FD689C /* GDataXML_HTMLViewController.xib in Resources */,
+				F4E0EDE613CF7A37000E7B3B /* xml.xml in Resources */,
+				F4E0EDE813CF7C31000E7B3B /* html.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +188,7 @@
 				F43A13D513CF10F300FD689C /* main.m in Sources */,
 				F43A13D813CF10F300FD689C /* GDataXML_HTMLAppDelegate.m in Sources */,
 				F43A13DE13CF10F300FD689C /* GDataXML_HTMLViewController.m in Sources */,
+				F4E0EDE313CF3A2F000E7B3B /* GDataXMLNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,7 +262,9 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GDataXML-HTML/GDataXML-HTML-Prefix.pch";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "GDataXML-HTML/GDataXML-HTML-Info.plist";
+				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -253,7 +277,9 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GDataXML-HTML/GDataXML-HTML-Prefix.pch";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "GDataXML-HTML/GDataXML-HTML-Info.plist";
+				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
@@ -279,6 +305,7 @@
 				F43A13E613CF10F300FD689C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

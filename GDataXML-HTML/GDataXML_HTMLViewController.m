@@ -7,12 +7,19 @@
 //
 
 #import "GDataXML_HTMLViewController.h"
+#import "lib/GDataXMLNode.h"
 
 @implementation GDataXML_HTMLViewController
+@synthesize textView;
 
 - (void)dealloc
 {
+    [textView release];
     [super dealloc];
+}
+
+- (void)print:(NSString *)string {
+    self.textView.text = [self.textView.text stringByAppendingString:string];
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,6 +42,7 @@
 
 - (void)viewDidUnload
 {
+    [self setTextView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -46,4 +54,28 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (IBAction)startXMLParsing:(id)sender {
+    self.textView.text = @"";
+    NSString *path = [[NSBundle mainBundle]pathForResource:@"xml" ofType:@"xml"];
+    GDataXMLDocument *doc = [[GDataXMLDocument alloc]initWithData:[NSData dataWithContentsOfFile:path] options:0 error:NULL];
+    if (doc) {
+        [self print:@"\nParse XML with XPath andd print out every employe:\n\n"];
+        NSArray *employees = [doc nodesForXPath:@"//employe" error:NULL];
+        for (GDataXMLElement *employe in employees) {
+            [self print:[employe stringValue]];[self print:@"\n"];
+        }
+    }
+    [doc release];
+}
+
+- (IBAction)startHTMLParsing {
+    self.textView.text = @"";
+    NSString *path = [[NSBundle mainBundle]pathForResource:@"html" ofType:@"html"];
+    GDataXMLDocument *doc = [[GDataXMLDocument alloc]initWithHTMLData:[NSData dataWithContentsOfFile:path] options:0 error:NULL];
+    if (doc) {
+        [self print:@"\nLoad non valid HTML file and convert it to valid XML:\n\n"];
+        [self print:[[doc rootElement] XMLString]];
+    }
+    [doc release];
+}
 @end

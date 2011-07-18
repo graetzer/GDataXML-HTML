@@ -1,0 +1,15 @@
+<company name="BIGCompany">
+    <department name="IT-Department">
+        <employees>
+            <employe>Phillip</employe>
+            <employe>Michael</employe>
+        </employees>
+    </department>
+    
+    <department name="Sales">
+        <employees>
+            <employe>Simon</employe>
+            <employe>Peter</employe>
+        </employees>
+    </department>
+</company>

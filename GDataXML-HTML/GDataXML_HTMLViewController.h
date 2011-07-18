@@ -10,6 +10,12 @@
 
 @interface GDataXML_HTMLViewController : UIViewController {
     
+    UITextView *textView;
 }
+
+@property (nonatomic, retain) IBOutlet UITextView *textView;
+
+- (IBAction)startXMLParsing:(id)sender;
+- (IBAction)startHTMLParsing;
 
 @end
