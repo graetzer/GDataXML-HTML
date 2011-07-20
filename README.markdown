@@ -19,7 +19,6 @@ There are two usage examples in this project inside the GDataXML_HTMLViewControl
 
 Other examples on the web:
 1. http://www.raywenderlich.com/725/how-to-read-and-write-xml-documents-with-gdataxml
-
 2. http://dubydigital.com/iphone/?p=59
 
 # Licence #
