@@ -1,11 +1,26 @@
-# Description
+# Description #
 GDataXML-HTML is a HTML/XML parser for the iOS System, based on Google's GDataXML. As the name suggest it adds support for the HTMLparser module of libxml2 and enables you to deal with non validating XML or HTML. So you can use e.g. XPath to easily parse Websites on an iPhone or iPad with reasonable performance
 
-# Licence
-For the original GDataXML files:
+# Installation #
+You have to include the libxml libary into your project.
+
+1. In Xcode4 choose the project file (in the project navigator, the top item).
+2. In the list choose your project target and select 'Build Settings' at the top of the window.
+Then you should see a long list of build options.
+
+3. Add this to 'Header Search Paths' (use search bar to find the right option):
+/usr/include/libxml2
+
+4. Add this to 'Other Linker Flags':
+-lxml2
+
+
+
+# Licence #
+Original GDataXML:
 Copyright 2008 Google Inc
 
-Example project and modifications:
+Example project and HTML addons:
 Copyright 2011 Simon Grätzer
 
    Licensed under the Apache License, Version 2.0 (the "License");
