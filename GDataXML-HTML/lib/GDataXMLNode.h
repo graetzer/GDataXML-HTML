@@ -1,7 +1,7 @@
-/* Copyright (c) 2008 Google Inc.
+/* Modifications for HTML parser support:
+ * Copyright (c) 2011 Simon Grätzer simon@graetzer.org
  *
- * Modifications for HTML parser support:
- * Copyright (C) 2011 Simon Grätzer simon@graetzer.org
+ * Copyright (c) 2008 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,12 +14,6 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
-
-/*
- * Modifications for HTML parser support made by Simon Grätzer
- * Copyright 2011
- * simon@graetzer.org
  */
 
 // These node, element, and document classes implement a subset of the methods

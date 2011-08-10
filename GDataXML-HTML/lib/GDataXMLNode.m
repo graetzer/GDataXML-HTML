@@ -1,7 +1,7 @@
-/* Copyright (c) 2008 Google Inc.
+/* Modifications for HTML parser support:
+ * Copyright (c) 2011 Simon Grätzer simon@graetzer.org
  *
- * Modifications for HTML parser support:
- * Copyright (C) 2011 Simon Grätzer simon@graetzer.org
+ * Copyright (c) 2008 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.

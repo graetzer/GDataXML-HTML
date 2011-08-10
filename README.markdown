@@ -26,10 +26,10 @@ There are two usage examples in this project inside the GDataXML_HTMLViewControl
 
 # Licence #
 Original GDataXML:
-Copyright 2008 Google Inc
+Copyright (c) 2008 Google Inc
 
 Example project and HTML addons:
-Copyright 2011 Simon Grätzer
+Copyright (c) 2011 Simon Grätzer
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
