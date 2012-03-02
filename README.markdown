@@ -4,22 +4,22 @@ GDataXML-HTML is a HTML/XML parser for the iOS System, based on Google's GDataXM
 # Use in your own project #
 ### Assuming XCode 4 but should work in XCode 3 ###
 
-1. First add the files from the lib/ folder in this project to your source tree, then include it somewhere in your sourcecode
+1. First add the files from the lib/ folder in this project to your source tree, then include them somewhere in your code,
 
 2. In Xcode4 choose the project file (in the project navigator, the top item).
 
 3. In the list choose your project target and select 'Build Settings' at the top of the window.
-Then you should see a long list of build options.
+Then you should see a list of build options.
 
-4. Add this to 'Header Search Paths' (use search bar to find the right option):
+4. Add this line to 'Header Search Paths' (use search bar to find the right option)
 /usr/include/libxml2
 
-5. Add this to 'Other Linker Flags':
+5. Add this line to 'Other Linker Flags':
 -lxml2
 
 # Examples #
 There are two usage examples in this project inside the GDataXML_HTMLViewController.m file.
-### Other examples on the web: ###
+### Other examples for GDataXML on the web: ###
 
 1. http://www.raywenderlich.com/725/how-to-read-and-write-xml-documents-with-gdataxml
 2. http://dubydigital.com/iphone/?p=59
@@ -29,7 +29,7 @@ Original GDataXML:
 Copyright (c) 2008 Google Inc
 
 Example project and HTML addons:
-Copyright (c) 2011 Simon Grätzer
+Copyright (c) 2012 Simon Grätzer
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
