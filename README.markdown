@@ -1,5 +1,5 @@
 # Description #
-GDataXML-HTML is a HTML/XML parser for the iOS System, based on Google's GDataXML. As the name suggest it adds support for the HTMLparser module of libxml2 and enables you to deal with non validating XML or HTML. So you can use e.g. XPath to easily parse Websites on an iPhone or iPad with reasonable performance
+GDataXML-HTML is a HTML/XML parser for iOS and OSX, based on Google's GDataXML. As the name suggest it adds support for the HTMLparser module of libxml2 and enables you to deal with non validating XML or HTML. So you can use e.g. XPath to easily parse Websites on an iPhone or iPad with reasonable performance
 
 # Use in your own project #
 ### Assuming XCode 4 but should work in XCode 3 ###
@@ -16,6 +16,17 @@ Then you should see a list of build options.
 
 5. Add this line to 'Other Linker Flags':
 -lxml2
+
+## ARC ##
+### If your code is using Automatic Reference Counting (ARC) do the following: ###
+
+1. Select Build Phases tab.
+
+2. Expand Compile Sources.
+
+3. Select GDataXMLNode.m then press Enter.
+
+4. On the small input box that pops-out, enter -fno-objc-arc.
 
 # Examples #
 There are two usage examples in this project inside the GDataXML_HTMLViewController.m file.
