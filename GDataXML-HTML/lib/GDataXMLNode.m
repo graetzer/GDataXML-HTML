@@ -1846,7 +1846,7 @@ static xmlChar *SplitQNameReverse(const xmlChar *qname, xmlChar **prefix) {
 }
 
 - (NSArray *)nodesForXPath:(NSString *)xpath error:(NSError **)error {
-    return [self nodesForXPath:xpath namespaces:nil error:error];
+    return [self nodesForXPath:xpath namespaces:[NSDictionary dictionaryWithObject:@"" forKey:@"_def_ns"] error:error];
 }
 
 - (NSArray *)nodesForXPath:(NSString *)xpath
