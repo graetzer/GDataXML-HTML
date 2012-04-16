@@ -146,6 +146,7 @@
 		F43A13BA13CF10F200FD689C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0430;
 				ORGANIZATIONNAME = "Cyber:con GmbH";
 			};
 			buildConfigurationList = F43A13BD13CF10F200FD689C /* Build configuration list for PBXProject "GDataXML-HTML" */;
@@ -266,6 +267,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GDataXML-HTML/GDataXML-HTML-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "GDataXML-HTML/GDataXML-HTML-Info.plist";
 				OTHER_LDFLAGS = "-lxml2";
@@ -281,6 +283,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GDataXML-HTML/GDataXML-HTML-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "GDataXML-HTML/GDataXML-HTML-Info.plist";
 				OTHER_LDFLAGS = "-lxml2";

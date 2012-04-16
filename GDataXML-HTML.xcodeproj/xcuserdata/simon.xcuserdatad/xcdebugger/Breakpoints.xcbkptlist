@@ -9,12 +9,12 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "GDataXML-HTML/GDataXML_HTMLViewController.m"
-         timestampString = "332366262.034733"
+         timestampString = "356262945.181557"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "77"
          endingLineNumber = "77"
-         landmarkName = "-startHTMLParsing"
+         landmarkName = "-startXMLParsing:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -23,11 +23,37 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "GDataXML-HTML/GDataXML_HTMLViewController.m"
-         timestampString = "332366262.034733"
+         timestampString = "356262945.181557"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "76"
          endingLineNumber = "76"
+         landmarkName = "-startXMLParsing:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "GDataXML-HTML/GDataXML_HTMLViewController.m"
+         timestampString = "356262945.181557"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "69"
+         endingLineNumber = "69"
+         landmarkName = "-startXMLParsing:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "GDataXML-HTML/GDataXML_HTMLViewController.m"
+         timestampString = "356262951.570718"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "84"
+         endingLineNumber = "84"
          landmarkName = "-startHTMLParsing"
          landmarkType = "5">
       </FileBreakpoint>
