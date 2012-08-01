@@ -21,7 +21,7 @@
     UITextView *textView;
 }
 
-@property (nonatomic, retain) IBOutlet UITextView *textView;
+@property (nonatomic, strong) IBOutlet UITextView *textView;
 
 - (IBAction)startXMLParsing:(id)sender;
 - (IBAction)startHTMLParsing;
