@@ -19,15 +19,7 @@ Then you should see a list of build options.
 -lxml2
 
 ## ARC ##
-### If your code is using Automatic Reference Counting (ARC) do the following: ###
-
-1. Select Build Phases tab.
-
-2. Expand Compile Sources.
-
-3. Select GDataXMLNode.m then press Enter.
-
-4. On the small input box that pops-out, enter -fno-objc-arc.
+GDataXML-HTML is build with ARC support
 
 # Examples #
 There are usage examples inside the GDataXML_HTMLViewController.m file.
