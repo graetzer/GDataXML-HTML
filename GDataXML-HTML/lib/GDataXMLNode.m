@@ -355,7 +355,7 @@ static xmlChar *SplitQNameReverse(const xmlChar *qname, xmlChar **prefix) {
                 if (cacheDict) {
                     
                     // this document has a strings cache
-                    result = (NSString *) CFDictionaryGetValue(cacheDict, chars);
+                    result = (__bridge NSString *) CFDictionaryGetValue(cacheDict, chars);
                     if (result) {
                         // we found the xmlChar string in the cache; return the previously
                         // allocated NSString, rather than allocate a new one
