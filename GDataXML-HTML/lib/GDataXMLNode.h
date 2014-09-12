@@ -139,6 +139,10 @@ typedef NSUInteger GDataXMLNodeKind;
 - (NSArray *)children;
 - (GDataXMLNode *)childAtIndex:(unsigned)index;
 
+- (GDataXMLNode *)parent;
+
+- (NSUInteger)index;
+
 - (NSString *)localName;
 - (NSString *)name;
 - (NSString *)prefix;
@@ -185,6 +189,7 @@ typedef NSUInteger GDataXMLNodeKind;
 // addChild adds a copy of the child node to the element
 - (void)addChild:(GDataXMLNode *)child;
 - (void)removeChild:(GDataXMLNode *)child;
+- (void)removeChildAtIndex:(NSUInteger)index;
 
 - (NSArray *)elementsForName:(NSString *)name;
 - (NSArray *)elementsForLocalName:(NSString *)localName URI:(NSString *)URI;
@@ -193,6 +198,7 @@ typedef NSUInteger GDataXMLNodeKind;
 - (GDataXMLNode *)attributeForName:(NSString *)name;
 - (GDataXMLNode *)attributeForLocalName:(NSString *)name URI:(NSString *)attributeURI;
 - (void)addAttribute:(GDataXMLNode *)attribute;
+- (void)removeAttributeForName:(NSString *)name;
 
 - (NSString *)resolvePrefixForNamespaceURI:(NSString *)namespaceURI;
 
