@@ -375,6 +375,78 @@ static xmlChar *SplitQNameReverse(const xmlChar *qname, xmlChar **prefix) {
     return result;
 }
 
+/**
+ * Removes and free's the given attribute from its parent node.
+ * The attribute's surrounding prev/next pointers are properly updated to remove the attribute from the attr list.
+ **/
++ (void)removeAttribute:(xmlAttrPtr)attr
+{
+	// We perform a bit of optimization here.
+	// No need to bother nullifying pointers since we're about to free the node anyway.
+	[self detachAttribute:attr andClean:NO];
+	
+	xmlFreeProp(attr);
+}
+
+/**
+ * Detaches the given attribute from its parent node.
+ * The attribute's surrounding prev/next pointers are properly updated to remove the attribute from the attr list.
+ * Then, if the clean flag is YES, the attribute's parent, prev, next and doc pointers are set to null.
+ **/
++ (void)detachAttribute:(xmlAttrPtr)attr andClean:(BOOL)clean
+{
+	xmlNodePtr parent = attr->parent;
+	
+	// Update the surrounding prev/next pointers
+	if (attr->prev == NULL)
+	{
+		if (attr->next == NULL)
+		{
+			parent->properties = NULL;
+		}
+		else
+		{
+			parent->properties = attr->next;
+			attr->next->prev = NULL;
+		}
+	}
+	else
+	{
+		if (attr->next == NULL)
+		{
+			attr->prev->next = NULL;
+		}
+		else
+		{
+			attr->prev->next = attr->next;
+			attr->next->prev = attr->prev;
+		}
+	}
+	
+	if (clean)
+	{
+		// Nullify pointers
+		attr->parent = NULL;
+		attr->prev   = NULL;
+		attr->next   = NULL;
+		attr->ns     = NULL;
+		if (attr->doc != NULL) [self stripDocPointersFromAttr:attr];
+	}
+}
+
++ (void)stripDocPointersFromAttr:(xmlAttrPtr)attr
+{
+	xmlNodePtr child = attr->children;
+	while (child != NULL)
+	{
+		child->doc = NULL;
+		child = child->next;
+	}
+	
+	attr->doc = NULL;
+}
+
+
 - (void)dealloc {
     
     if (xmlNode_ && shouldFreeXMLNode_) {
@@ -650,6 +722,27 @@ static xmlChar *SplitQNameReverse(const xmlChar *qname, xmlChar **prefix) {
         return [children objectAtIndex:index];
     }
     return nil;
+}
+
+- (GDataXMLNode *)parent {
+    xmlNodePtr node = xmlNode_;
+    
+    if (node->parent == NULL)
+        return nil;
+    else
+        return [GDataXMLNode nodeBorrowingXMLNode:node->parent];
+}
+
+- (NSUInteger)index {
+    NSUInteger result = 0;
+    xmlNodePtr node = xmlNode_->prev;
+    while (node != NULL)
+    {
+        result++;
+        node = node->prev;
+    }
+    
+    return result;
 }
 
 - (GDataXMLNodeKind)kind {
@@ -1115,6 +1208,11 @@ static xmlChar *SplitQNameReverse(const xmlChar *qname, xmlChar **prefix) {
     }
 }
 
+- (void)removeChildAtIndex:(NSUInteger)index
+{
+    [self removeChild:[self childAtIndex:index]];
+}
+
 - (NSArray *)elementsForName:(NSString *)name {
     
     NSString *desiredName = name;
@@ -1324,6 +1422,26 @@ static xmlChar *SplitQNameReverse(const xmlChar *qname, xmlChar **prefix) {
             }
         }
     }
+}
+
+- (void)removeAttributeForName:(NSString *)name {
+	// This is a private/internal method
+	
+	xmlAttrPtr attr = (xmlNode_)->properties;
+	if (attr)
+	{
+		const xmlChar *xmlName = (const xmlChar *)[name UTF8String];;
+		do
+		{
+			if (xmlStrEqual(attr->name, xmlName))
+			{
+				[GDataXMLNode removeAttribute:attr];
+				return;
+			}
+			attr = attr->next;
+			
+		} while(attr);
+	}
 }
 
 - (GDataXMLNode *)attributeForXMLNode:(xmlAttrPtr)theXMLNode {
@@ -1914,14 +2032,11 @@ const char *IANAEncodingCStringFromNSStringEncoding(NSStringEncoding encoding)
                 namespaces:(NSDictionary *)namespaces
                      error:(NSError **)error {
     if (xmlDoc_ != NULL) {
-        xmlNodePtr rootElement = xmlDocGetRootElement(xmlDoc_);
-        if (rootElement != NULL) {
-            GDataXMLNode *rootNode = [GDataXMLElement nodeBorrowingXMLNode:rootElement];
-            NSArray *array = [rootNode nodesForXPath:xpath
-                                         namespaces:namespaces
-                                              error:error];
-            return array;
-        }
+        GDataXMLNode *docNode = [GDataXMLElement nodeBorrowingXMLNode:(xmlNodePtr)xmlDoc_];
+        NSArray *array = [docNode nodesForXPath:xpath
+                                     namespaces:namespaces
+                                          error:error];
+        return array;
     }
     return nil;
 }
@@ -1981,4 +2096,3 @@ static CFHashCode StringCacheKeyHashCallBack(const void *str) {
     }
     return hash;
 }
-
