@@ -2032,11 +2032,14 @@ const char *IANAEncodingCStringFromNSStringEncoding(NSStringEncoding encoding)
                 namespaces:(NSDictionary *)namespaces
                      error:(NSError **)error {
     if (xmlDoc_ != NULL) {
-        GDataXMLNode *docNode = [GDataXMLElement nodeBorrowingXMLNode:(xmlNodePtr)xmlDoc_];
-        NSArray *array = [docNode nodesForXPath:xpath
-                                     namespaces:namespaces
-                                          error:error];
-        return array;
+        xmlNodePtr rootElement = xmlDocGetRootElement(xmlDoc_);
+        if (rootElement != NULL) {
+            GDataXMLNode *rootNode = [GDataXMLElement nodeBorrowingXMLNode:rootElement];
+            NSArray *array = [rootNode nodesForXPath:xpath
+                                         namespaces:namespaces
+                                              error:error];
+            return array;
+        }
     }
     return nil;
 }
