@@ -400,27 +400,17 @@ static xmlChar *SplitQNameReverse(const xmlChar *qname, xmlChar **prefix) {
 	// Update the surrounding prev/next pointers
 	if (attr->prev == NULL)
 	{
-		if (attr->next == NULL)
-		{
-			parent->properties = NULL;
-		}
-		else
-		{
-			parent->properties = attr->next;
-			attr->next->prev = NULL;
-		}
+        parent->properties = attr->next;
+        if (attr->next != NULL) {
+            attr->next->prev = NULL;
+        }
 	}
 	else
 	{
-		if (attr->next == NULL)
-		{
-			attr->prev->next = NULL;
-		}
-		else
-		{
-			attr->prev->next = attr->next;
-			attr->next->prev = attr->prev;
-		}
+		attr->prev->next = attr->next;
+        if (attr->next != NULL) {
+            attr->next->prev = attr->prev;
+        }
 	}
 	
 	if (clean)
