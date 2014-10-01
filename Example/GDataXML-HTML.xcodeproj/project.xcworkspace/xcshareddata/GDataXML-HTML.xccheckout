@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>8EAC205C-E2F7-4D99-8793-E56304731D20</string>
+	<key>IDESourceControlProjectName</key>
+	<string>GDataXML-HTML</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>CCBBAA233AD9F3064F94BC21EE148D3ABB1199C4</key>
+		<string>https://github.com/graetzer/GDataXML-HTML.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>GDataXML-HTML.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>CCBBAA233AD9F3064F94BC21EE148D3ABB1199C4</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/graetzer/GDataXML-HTML.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>CCBBAA233AD9F3064F94BC21EE148D3ABB1199C4</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>CCBBAA233AD9F3064F94BC21EE148D3ABB1199C4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>GDataXML-HTML</string>
+		</dict>
+	</array>
+</dict>
+</plist>

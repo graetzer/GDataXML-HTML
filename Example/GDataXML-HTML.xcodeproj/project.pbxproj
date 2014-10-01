@@ -16,7 +16,7 @@
 		F43A13DB13CF10F300FD689C /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = F43A13D913CF10F300FD689C /* MainWindow.xib */; };
 		F43A13DE13CF10F300FD689C /* GDataXML_HTMLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F43A13DD13CF10F300FD689C /* GDataXML_HTMLViewController.m */; };
 		F43A13E113CF10F300FD689C /* GDataXML_HTMLViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F43A13DF13CF10F300FD689C /* GDataXML_HTMLViewController.xib */; };
-		F4A6CE8D196478C60094DD65 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F4A6CE8C196478C60094DD65 /* Default-568h@2x.png */; };
+		F4C0C0C019DC27AF00EF8722 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4C0C0BF19DC27AF00EF8722 /* Images.xcassets */; };
 		F4E0EDE313CF3A2F000E7B3B /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E0EDE213CF3A2F000E7B3B /* GDataXMLNode.m */; };
 		F4E0EDE613CF7A37000E7B3B /* xml.xml in Resources */ = {isa = PBXBuildFile; fileRef = F4E0EDE513CF7A37000E7B3B /* xml.xml */; };
 		F4E0EDE813CF7C31000E7B3B /* html.html in Resources */ = {isa = PBXBuildFile; fileRef = F4E0EDE713CF7C31000E7B3B /* html.html */; };
@@ -37,7 +37,7 @@
 		F43A13DC13CF10F300FD689C /* GDataXML_HTMLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GDataXML_HTMLViewController.h; sourceTree = "<group>"; };
 		F43A13DD13CF10F300FD689C /* GDataXML_HTMLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDataXML_HTMLViewController.m; sourceTree = "<group>"; };
 		F43A13E013CF10F300FD689C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/GDataXML_HTMLViewController.xib; sourceTree = "<group>"; };
-		F4A6CE8C196478C60094DD65 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		F4C0C0BF19DC27AF00EF8722 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F4E0EDE113CF3A2F000E7B3B /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
 		F4E0EDE213CF3A2F000E7B3B /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
 		F4E0EDE513CF7A37000E7B3B /* xml.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = xml.xml; sourceTree = "<group>"; };
@@ -61,6 +61,7 @@
 		F43A13B813CF10F200FD689C = {
 			isa = PBXGroup;
 			children = (
+				F4E0EDE013CF3A2F000E7B3B /* Lib */,
 				F43A13CD13CF10F300FD689C /* GDataXML-HTML */,
 				F43A13C613CF10F300FD689C /* Frameworks */,
 				F43A13C413CF10F300FD689C /* Products */,
@@ -88,7 +89,6 @@
 		F43A13CD13CF10F300FD689C /* GDataXML-HTML */ = {
 			isa = PBXGroup;
 			children = (
-				F4E0EDE013CF3A2F000E7B3B /* lib */,
 				F43A13D613CF10F300FD689C /* GDataXML_HTMLAppDelegate.h */,
 				F43A13D713CF10F300FD689C /* GDataXML_HTMLAppDelegate.m */,
 				F43A13D913CF10F300FD689C /* MainWindow.xib */,
@@ -98,6 +98,7 @@
 				F43A13CE13CF10F300FD689C /* Supporting Files */,
 				F4E0EDE513CF7A37000E7B3B /* xml.xml */,
 				F4E0EDE713CF7C31000E7B3B /* html.html */,
+				F4C0C0BF19DC27AF00EF8722 /* Images.xcassets */,
 			);
 			path = "GDataXML-HTML";
 			sourceTree = "<group>";
@@ -105,7 +106,6 @@
 		F43A13CE13CF10F300FD689C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F4A6CE8C196478C60094DD65 /* Default-568h@2x.png */,
 				F43A13CF13CF10F300FD689C /* GDataXML-HTML-Info.plist */,
 				F43A13D013CF10F300FD689C /* InfoPlist.strings */,
 				F43A13D313CF10F300FD689C /* GDataXML-HTML-Prefix.pch */,
@@ -114,14 +114,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		F4E0EDE013CF3A2F000E7B3B /* lib */ = {
+		F4E0EDE013CF3A2F000E7B3B /* Lib */ = {
 			isa = PBXGroup;
 			children = (
 				F4E0EDE113CF3A2F000E7B3B /* GDataXMLNode.h */,
 				F4E0EDE213CF3A2F000E7B3B /* GDataXMLNode.m */,
 			);
+			name = Lib;
 			path = lib;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -177,9 +178,9 @@
 				F43A13D213CF10F300FD689C /* InfoPlist.strings in Resources */,
 				F43A13DB13CF10F300FD689C /* MainWindow.xib in Resources */,
 				F43A13E113CF10F300FD689C /* GDataXML_HTMLViewController.xib in Resources */,
+				F4C0C0C019DC27AF00EF8722 /* Images.xcassets in Resources */,
 				F4E0EDE613CF7A37000E7B3B /* xml.xml in Resources */,
 				F4E0EDE813CF7C31000E7B3B /* html.html in Resources */,
-				F4A6CE8D196478C60094DD65 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +267,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -284,6 +287,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
