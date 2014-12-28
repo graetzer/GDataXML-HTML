@@ -16,10 +16,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GDataXML_HTMLViewController : UIViewController {
-    
-    UITextView *textView;
-}
+@interface GDataXML_HTMLViewController : UIViewController
 
 @property (nonatomic, strong) IBOutlet UITextView *textView;
 

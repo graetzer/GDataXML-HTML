@@ -33,3 +33,7 @@ Pods/
 
 
 *.lock
+
+Example/GDataXML-HTML.xcworkspace/contents.xcworkspacedata
+
+Example/GDataXML-HTML.xcodeproj/project.xcworkspace/xcshareddata/GDataXML-HTML.xccheckout
