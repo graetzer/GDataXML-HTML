@@ -1,4 +1,8 @@
 # Description #
+
+[![Pod Version](http://img.shields.io/cocoapods/v/GDataXML-HTML.svg?style=flat)](http://cocoadocs.org/docsets/GDataXML-HTML/)
+[![Pod Platform](http://img.shields.io/cocoapods/p/GDataXML-HTML.svg?style=flat)](http://cocoadocs.org/docsets/GDataXML-HTML/)
+
 GDataXML-HTML is a HTML/XML parser for iOS and OSX, based on Google's GDataXML. As the name suggest it adds support for the HTMLparser module of libxml2 and enables you to deal with non validating XML or HTML.
 
 So you can use e.g. XPath to parse Websites with reasonable performance
