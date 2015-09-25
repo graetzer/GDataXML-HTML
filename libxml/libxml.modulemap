@@ -1,5 +1,0 @@
-module libxml [system] {
-    header "/usr/include/libxml2/libxml/tree.h"
-    link "libxml"
-    export *
-}
