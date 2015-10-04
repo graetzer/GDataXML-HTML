@@ -1,6 +1,6 @@
 language: objective-c
 osx_image: xcode7
 install:
-  - brew install xcpretty
+  - sudo gem install xcpretty
 script:
   - cd Example && pod install &&  xcodebuild -workspace GDataXML-HTML.xcworkspace -scheme GDataXML-HTML test -sdk iphonesimulator | xcpretty -c && exit ${PIPESTATUS[0]}
