@@ -1,7 +1,7 @@
 # coding: utf-8
 Pod::Spec.new do |s|
   s.name			= "GDataXML-HTML"
-  s.version			= "1.2.0"
+  s.version			= "1.3.0"
   s.summary			= "An XML/HTML Parser for iOS and OSX, based on Google's GDataXML."
   s.description			= <<-DESC
 				  GDataXML implements parts of NSXML so it's easy to parse XML or HTML with a DOM style API including
