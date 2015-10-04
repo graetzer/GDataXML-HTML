@@ -18,43 +18,33 @@
 #import "GDataXMLNode.h"
 
 @implementation GDataXML_HTMLViewController
-@synthesize textView;
-
 
 - (void)print:(NSString *)string {
     self.textView.text = [self.textView.text stringByAppendingString:string];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
-
 #pragma mark - View lifecycle
 
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
-*/
-
-- (void)viewDidUnload
-{
-    [self setTextView:nil];
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+- (IBAction)runXPathTests:(id)sender {
+    self.textView.text = nil;
+    GDataXMLDocument* doc = [[GDataXMLDocument alloc] initWithHTMLString:@"<doc></doc>" error:NULL];
+    [doc nodesForXPath:@"//doc" error:NULL];
+
+    GDataXMLDocument* doc1 = [[GDataXMLDocument alloc] initWithXMLString:@"<doc/>" error:NULL];
+    NSAssert([doc1 nodesForXPath:@"//doc" error:NULL].count == 1,@"1.1: Works, 1.2: Works");
+    NSAssert([doc1 nodesForXPath:@"/doc" error:NULL].count == 1, @"1.1: Works, 1.2: Works");
+    NSAssert([doc1 nodesForXPath:@"doc" error:NULL].count == 1,  @"1.1: Works, 1.2: Fails");
+    
+    [self print:@"\nNo crash, seems to work"];
 }
 
 - (IBAction)startXMLParsing:(id)sender {
@@ -62,7 +52,7 @@
     NSString *path = [[NSBundle mainBundle]pathForResource:@"xml" ofType:@"xml"];
     GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:[NSData dataWithContentsOfFile:path] encoding:NSUTF8StringEncoding  error:NULL];
     if (doc) {
-        [self print:@"\nParse XML with XPath andd print out every employe:\n\n"];
+        [self print:@"\nParse XML with XPath and print out every employe:\n\n"];
         NSArray *employees = [doc nodesForXPath:@"//employe" error:NULL];
         for (GDataXMLElement *employe in employees) {
             [self print:[employe stringValue]];[self print:@"\n"];
