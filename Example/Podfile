@@ -1,3 +1,7 @@
-target 'GDataXML-HTML', :exclusive => true do
+target 'GDataXML-HTML'  do
+	pod "GDataXML-HTML", :path => "../"
+end
+
+target 'GDataXML-HTMLTests'  do
 	pod "GDataXML-HTML", :path => "../"
 end

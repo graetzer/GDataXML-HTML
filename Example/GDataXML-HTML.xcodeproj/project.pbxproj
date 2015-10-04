@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		962843BA1BC0EC4E00784C86 /* GDataXML_HTMLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 962843B91BC0EC4E00784C86 /* GDataXML_HTMLTests.m */; };
+		AEFF8247AE82F48A8DB850E0 /* libPods-GDataXML-HTMLTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C1092D58BE5C2352B238FEDF /* libPods-GDataXML-HTMLTests.a */; };
 		D31B50F53EDB8F0EE10D9AC7 /* libPods-GDataXML-HTML.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D06E219F8A60F76B1CD39E9D /* libPods-GDataXML-HTML.a */; };
 		F43A13C813CF10F300FD689C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F43A13C713CF10F300FD689C /* UIKit.framework */; };
 		F43A13CA13CF10F300FD689C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F43A13C913CF10F300FD689C /* Foundation.framework */; };
@@ -22,9 +24,25 @@
 		F4E0EDE813CF7C31000E7B3B /* html.html in Resources */ = {isa = PBXBuildFile; fileRef = F4E0EDE713CF7C31000E7B3B /* html.html */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		962843BC1BC0EC4E00784C86 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F43A13BA13CF10F200FD689C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F43A13C213CF10F300FD689C;
+			remoteInfo = "GDataXML-HTML";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		6CCBD3BB80D1A3570D301532 /* Pods-GDataXML-HTML.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GDataXML-HTML.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GDataXML-HTML/Pods-GDataXML-HTML.debug.xcconfig"; sourceTree = "<group>"; };
+		7200863AED06A4D34C5EB5C9 /* Pods-GDataXML-HTMLTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GDataXML-HTMLTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GDataXML-HTMLTests/Pods-GDataXML-HTMLTests.debug.xcconfig"; sourceTree = "<group>"; };
+		962843B71BC0EC4E00784C86 /* GDataXML-HTMLTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GDataXML-HTMLTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		962843B91BC0EC4E00784C86 /* GDataXML_HTMLTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDataXML_HTMLTests.m; sourceTree = "<group>"; };
+		962843BB1BC0EC4E00784C86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9E831F03EDC5BB29E983FC02 /* Pods-GDataXML-HTMLTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GDataXML-HTMLTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GDataXML-HTMLTests/Pods-GDataXML-HTMLTests.release.xcconfig"; sourceTree = "<group>"; };
 		A66C6BEE5C39EA9F11263B35 /* Pods-GDataXML-HTML.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GDataXML-HTML.release.xcconfig"; path = "Pods/Target Support Files/Pods-GDataXML-HTML/Pods-GDataXML-HTML.release.xcconfig"; sourceTree = "<group>"; };
+		C1092D58BE5C2352B238FEDF /* libPods-GDataXML-HTMLTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GDataXML-HTMLTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D06E219F8A60F76B1CD39E9D /* libPods-GDataXML-HTML.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GDataXML-HTML.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F43A13C313CF10F300FD689C /* GDataXML-HTML.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GDataXML-HTML.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F43A13C713CF10F300FD689C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -46,6 +64,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		962843B41BC0EC4E00784C86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEFF8247AE82F48A8DB850E0 /* libPods-GDataXML-HTMLTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F43A13C013CF10F300FD689C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -65,14 +91,26 @@
 			children = (
 				6CCBD3BB80D1A3570D301532 /* Pods-GDataXML-HTML.debug.xcconfig */,
 				A66C6BEE5C39EA9F11263B35 /* Pods-GDataXML-HTML.release.xcconfig */,
+				7200863AED06A4D34C5EB5C9 /* Pods-GDataXML-HTMLTests.debug.xcconfig */,
+				9E831F03EDC5BB29E983FC02 /* Pods-GDataXML-HTMLTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		962843B81BC0EC4E00784C86 /* GDataXML-HTMLTests */ = {
+			isa = PBXGroup;
+			children = (
+				962843B91BC0EC4E00784C86 /* GDataXML_HTMLTests.m */,
+				962843BB1BC0EC4E00784C86 /* Info.plist */,
+			);
+			path = "GDataXML-HTMLTests";
 			sourceTree = "<group>";
 		};
 		F43A13B813CF10F200FD689C = {
 			isa = PBXGroup;
 			children = (
 				F43A13CD13CF10F300FD689C /* GDataXML-HTML */,
+				962843B81BC0EC4E00784C86 /* GDataXML-HTMLTests */,
 				F43A13C613CF10F300FD689C /* Frameworks */,
 				F43A13C413CF10F300FD689C /* Products */,
 				054E7942BA1DEE204A7D9A07 /* Pods */,
@@ -83,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				F43A13C313CF10F300FD689C /* GDataXML-HTML.app */,
+				962843B71BC0EC4E00784C86 /* GDataXML-HTMLTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -94,6 +133,7 @@
 				F43A13C913CF10F300FD689C /* Foundation.framework */,
 				F43A13CB13CF10F300FD689C /* CoreGraphics.framework */,
 				D06E219F8A60F76B1CD39E9D /* libPods-GDataXML-HTML.a */,
+				C1092D58BE5C2352B238FEDF /* libPods-GDataXML-HTMLTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -129,6 +169,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		962843B61BC0EC4E00784C86 /* GDataXML-HTMLTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 962843C01BC0EC4E00784C86 /* Build configuration list for PBXNativeTarget "GDataXML-HTMLTests" */;
+			buildPhases = (
+				010930FBCD1CA697C97D98F7 /* Check Pods Manifest.lock */,
+				962843B31BC0EC4E00784C86 /* Sources */,
+				962843B41BC0EC4E00784C86 /* Frameworks */,
+				962843B51BC0EC4E00784C86 /* Resources */,
+				D8914B683F4AE66E3FFC029B /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				962843BD1BC0EC4E00784C86 /* PBXTargetDependency */,
+			);
+			name = "GDataXML-HTMLTests";
+			productName = "GDataXML-HTMLTests";
+			productReference = 962843B71BC0EC4E00784C86 /* GDataXML-HTMLTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		F43A13C213CF10F300FD689C /* GDataXML-HTML */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F43A13E413CF10F300FD689C /* Build configuration list for PBXNativeTarget "GDataXML-HTML" */;
@@ -157,6 +217,10 @@
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Cyber:con GmbH";
 				TargetAttributes = {
+					962843B61BC0EC4E00784C86 = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = F43A13C213CF10F300FD689C;
+					};
 					F43A13C213CF10F300FD689C = {
 						DevelopmentTeam = AQR4MQXUPM;
 					};
@@ -175,11 +239,19 @@
 			projectRoot = "";
 			targets = (
 				F43A13C213CF10F300FD689C /* GDataXML-HTML */,
+				962843B61BC0EC4E00784C86 /* GDataXML-HTMLTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		962843B51BC0EC4E00784C86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F43A13C113CF10F300FD689C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -196,6 +268,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		010930FBCD1CA697C97D98F7 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		022D0EC28BD0E62788449E39 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -226,9 +313,32 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		D8914B683F4AE66E3FFC029B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GDataXML-HTMLTests/Pods-GDataXML-HTMLTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		962843B31BC0EC4E00784C86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				962843BA1BC0EC4E00784C86 /* GDataXML_HTMLTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F43A13BF13CF10F300FD689C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -240,6 +350,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		962843BD1BC0EC4E00784C86 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F43A13C213CF10F300FD689C /* GDataXML-HTML */;
+			targetProxy = 962843BC1BC0EC4E00784C86 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		F43A13D013CF10F300FD689C /* InfoPlist.strings */ = {
@@ -269,6 +387,92 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		962843BE1BC0EC4E00784C86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7200863AED06A4D34C5EB5C9 /* Pods-GDataXML-HTMLTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_VERSION = "";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "GDataXML-HTMLTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "fessguid.GDataXML-HTMLTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GDataXML-HTML.app/GDataXML-HTML";
+			};
+			name = Debug;
+		};
+		962843BF1BC0EC4E00784C86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E831F03EDC5BB29E983FC02 /* Pods-GDataXML-HTMLTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_VERSION = "";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "GDataXML-HTMLTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "fessguid.GDataXML-HTMLTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GDataXML-HTML.app/GDataXML-HTML";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		F43A13E213CF10F300FD689C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -345,6 +549,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		962843C01BC0EC4E00784C86 /* Build configuration list for PBXNativeTarget "GDataXML-HTMLTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				962843BE1BC0EC4E00784C86 /* Debug */,
+				962843BF1BC0EC4E00784C86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F43A13BD13CF10F200FD689C /* Build configuration list for PBXProject "GDataXML-HTML" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
