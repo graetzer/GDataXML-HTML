@@ -62,5 +62,34 @@
     XCTAssertEqual([doc nodesForXPath:@"html" error:NULL].count,(NSUInteger)1,  @"1.1: Fails, 1.2: Fails");
 }
 
+-(void)testNSCrash
+{
+    NSString* invalidXML = @"<?xml version=\"1.0\"?> \
+    <!DOCTYPE EXAMPLE SYSTEM \"example.dtd\" [ \
+                                            <!ENTITY xml \"<prefix:node>prefix is indeclared here</prefix:node>\"> \
+                                            ]> \
+    <EXAMPLE xmlns:prefix=\"http://example.com\"> \
+    &xml; \
+    </EXAMPLE>";
+    
+    GDataXMLDocument* doc = [[GDataXMLDocument alloc] initWithXMLString:invalidXML error:NULL];
+    XCTAssertNotNil([self readNode: doc.rootElement]);
+}
+
+-(NSDictionary*)readNode:(GDataXMLNode*)node
+{
+    NSMutableArray* childs = [@[] mutableCopy];
+    NSString* content;
+    if (node.children.count == 1 && ((GDataXMLNode*)node.children[0]).kind == GDataXMLTextKind)
+        content =[((GDataXMLNode*)node.children[0]).stringValue stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    else
+        [node.children enumerateObjectsUsingBlock:^(GDataXMLNode* child, NSUInteger idx, BOOL* stop) {
+            [childs addObject:[self readNode:child]];
+        }];
+    
+    return @{@"tag":node.name,
+             @"content":childs.count ? childs : (content ? @[content]: @[])};
+}
+
 
 @end

@@ -372,9 +372,6 @@ static void RegisterNamespaces(NSDictionary *namespaces, xmlXPathContextPtr xpat
 // cache if possible
 - (NSString *)stringFromXMLString:(const xmlChar *)chars {
     
-#if DEBUG
-    NSCAssert(chars != NULL, @"GDataXMLNode sees an unexpected empty string");
-#endif
     if (chars == NULL) return nil;
     
     CFMutableDictionaryRef cacheDict = NULL;
