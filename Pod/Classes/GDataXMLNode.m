@@ -573,6 +573,8 @@ static void RegisterNamespaces(NSDictionary *namespaces, xmlXPathContextPtr xpat
                 str = [self stringFromXMLString:(nsNode->prefix)];
             }
             
+        } else if (xmlNode_->type == XML_ENTITY_DECL) {
+            str = [self stringFromXMLString:(xmlNode_->name)];
         } else if (xmlNode_->ns != NULL && xmlNode_->ns->prefix != NULL) {
             
             // name of a non-namespace node
