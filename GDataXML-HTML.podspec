@@ -16,16 +16,7 @@ Pod::Spec.new do |s|
   s.source_files		= "Pod/Classes"
   s.library			= "xml2"
   s.requires_arc		= true
-  s.xcconfig			= { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2 $(PODS_ROOT)/GDataXML-HTML/libxml" }
-  s.module_map			= 'libxml.modulemap'
-  s.prepare_command		= <<-CMD
-    cat > "libxml.modulemap" << MAP
-module libxml [system] {
-    header "$(SDKROOT)/usr/include/libxml2/libxml/tree.h"
-    link "libxml"
-    export *
-}
-MAP
-  CMD
+  s.xcconfig			= { "HEADER_SEARCH_PATHS" => "$(inherited) $(SDKROOT)/usr/include/libxml2" }
+
 
 end
