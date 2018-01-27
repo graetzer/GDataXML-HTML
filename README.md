@@ -12,7 +12,7 @@ So you can use e.g. XPath to parse Websites with reasonable performance
 
 ### Install with CocoaPods
 
-pod 'GDataXML-HTML', '~> 1.3.0'
+pod 'GDataXML-HTML', '~> 1.4.0'
 
 ### Manually ###
 
