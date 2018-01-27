@@ -12,7 +12,7 @@ So you can use e.g. XPath to parse Websites with reasonable performance
 
 ### Install with CocoaPods
 
-pod 'GDataXML-HTML', '~> 1.4.0'
+pod 'GDataXML-HTML', '~> 1.4.1'
 
 ### Manually ###
 
@@ -30,7 +30,10 @@ Then you should see a list of build options.
 -lxml2
 
 # Examples #
+
 There are usage examples inside the GDataXML_HTMLViewController.m file.
+Basically the library builds an object library of the entire XML DOM. This library
+adds convenient Objective-C types around the libxml parsing library.
 
 ### Other examples for GDataXML on the web: ###
 
