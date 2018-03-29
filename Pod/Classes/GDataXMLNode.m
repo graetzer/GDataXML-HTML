@@ -170,28 +170,27 @@ static void RegisterNamespaces(NSDictionary *namespaces, xmlXPathContextPtr xpat
     }
 }
 
-@interface GDataXMLNode ()
-{
+@interface GDataXMLNode () {
 @protected
-    // NSXMLNodes can have a namespace URI or prefix even if not part
-    // of a tree; xmlNodes cannot.  When we create nodes apart from
-    // a tree, we'll store the dangling prefix or URI in the xmlNode's name,
-    // like
-    //   "prefix:name"
-    // or
-    //   "{http://uri}:name"
-    //
-    // We will fix up the node's namespace and name (and those of any children)
-    // later when adding the node to a tree with addChild: or addAttribute:.
-    // See fixUpNamespacesForNode:.
-    
-    xmlNodePtr xmlNode_; // may also be an xmlAttrPtr or xmlNsPtr
-    BOOL shouldFreeXMLNode_; // if yes, xmlNode_ will be free'd in dealloc
-    
-    // cached values
-    NSString *cachedName_;
-    NSArray *cachedChildren_;
-    NSArray *cachedAttributes_;
+  // NSXMLNodes can have a namespace URI or prefix even if not part
+  // of a tree; xmlNodes cannot.  When we create nodes apart from
+  // a tree, we'll store the dangling prefix or URI in the xmlNode's name,
+  // like
+  //   "prefix:name"
+  // or
+  //   "{http://uri}:name"
+  //
+  // We will fix up the node's namespace and name (and those of any children)
+  // later when adding the node to a tree with addChild: or addAttribute:.
+  // See fixUpNamespacesForNode:.
+  
+  xmlNodePtr xmlNode_; // may also be an xmlAttrPtr or xmlNsPtr
+  BOOL shouldFreeXMLNode_; // if yes, xmlNode_ will be free'd in dealloc
+  
+  // cached values
+  __strong NSString *cachedName_;
+  __strong NSArray<GDataXMLNode*> *cachedChildren_;
+  __strong NSArray *cachedAttributes_;
 }
 
 // consuming a node implies it will later be freed when the instance is
@@ -205,8 +204,10 @@ static void RegisterNamespaces(NSDictionary *namespaces, xmlXPathContextPtr xpat
 - (id)initBorrowingXMLNode:(xmlNodePtr)theXMLNode;
 
 // getters of the underlying node
-- (xmlNodePtr)XMLNode;
 - (xmlNodePtr)XMLNodeCopy;
+
+// search for an underlying attribute
+- (GDataXMLNode *)attributeForXMLNode:(xmlAttrPtr)theXMLNode;
 
 // return an NSString for an xmlChar*, using our strings cache in the
 // document
@@ -219,9 +220,6 @@ static void RegisterNamespaces(NSDictionary *namespaces, xmlXPathContextPtr xpat
 @end
 
 @interface GDataXMLElement ()
-
-// search for an underlying attribute
-- (GDataXMLNode *)attributeForXMLNode:(xmlAttrPtr)theXMLNode;
 
 + (void)fixUpNamespacesForNode:(xmlNodePtr)nodeToFix
             graftingToTreeNode:(xmlNodePtr)graftPointNode;
@@ -394,11 +392,8 @@ static void RegisterNamespaces(NSDictionary *namespaces, xmlXPathContextPtr xpat
 }
 
 - (void)releaseCachedValues {
-    
     cachedName_ = nil;
-    
     cachedChildren_ = nil;
-    
     cachedAttributes_ = nil;
 }
 
@@ -610,8 +605,6 @@ static void RegisterNamespaces(NSDictionary *namespaces, xmlXPathContextPtr xpat
                 str = [self stringFromXMLString:(nsNode->prefix)];
             }
             
-        } else if (xmlNode_->type == XML_ENTITY_DECL) {
-            str = [self stringFromXMLString:(xmlNode_->name)];
         } else if (xmlNode_->ns != NULL && xmlNode_->ns->prefix != NULL) {
             
             // name of a non-namespace node
@@ -695,7 +688,7 @@ static void RegisterNamespaces(NSDictionary *namespaces, xmlXPathContextPtr xpat
     return 0;
 }
 
-- (NSArray *)children {
+- (NSArray<GDataXMLNode*> *)children {
     
     if (cachedChildren_ != nil) {
         return cachedChildren_;
@@ -715,7 +708,6 @@ static void RegisterNamespaces(NSDictionary *namespaces, xmlXPathContextPtr xpat
             } else {
                 [array addObject:node];
             }
-            
             currChild = currChild->next;
         }
         
@@ -726,10 +718,8 @@ static void RegisterNamespaces(NSDictionary *namespaces, xmlXPathContextPtr xpat
 
 - (GDataXMLNode *)childAtIndex:(unsigned)index {
     
-    NSArray *children = [self children];
-    
+    NSArray<GDataXMLNode*> *children = [self children];
     if ([children count] > index) {
-        
         return [children objectAtIndex:index];
     }
     return nil;
@@ -789,11 +779,11 @@ static void RegisterNamespaces(NSDictionary *namespaces, xmlXPathContextPtr xpat
 	return [nodes objectAtIndex:0];
 }
 
-- (NSArray *)nodesForXPath:(NSString *)xpath
-                namespaces:(NSDictionary *)namespaces
-                     error:(NSError **)error {
+- (NSArray<GDataXMLNode*> *)nodesForXPath:(NSString *)xpath
+                               namespaces:(NSDictionary *)namespaces
+                                    error:(NSError **)error {
     
-    NSMutableArray *array = nil;
+    NSMutableArray<GDataXMLNode*> *array = nil;
     NSInteger errorCode = -1;
     NSDictionary *errorInfo = nil;
     
@@ -935,7 +925,7 @@ static void RegisterNamespaces(NSDictionary *namespaces, xmlXPathContextPtr xpat
     return NULL;
 }
 
-- (xmlNodePtr)XMLNode {
+- (void*)XMLNode {
     return xmlNode_;
 }
 
@@ -1027,9 +1017,9 @@ static void RegisterNamespaces(NSDictionary *namespaces, xmlXPathContextPtr xpat
     return self;
 }
 
-- (NSArray *)namespaces {
+- (NSArray<GDataXMLNode*> *)namespaces {
     
-    NSMutableArray *array = nil;
+    NSMutableArray<GDataXMLNode*> *array = nil;
     
     if (xmlNode_ != NULL && xmlNode_->nsDef != NULL) {
         
@@ -1279,13 +1269,13 @@ static void RegisterNamespaces(NSDictionary *namespaces, xmlXPathContextPtr xpat
     return array;
 }
 
-- (NSArray *)attributes {
+- (NSArray<GDataXMLNode*> *)attributes {
     
     if (cachedAttributes_ != nil) {
         return cachedAttributes_;
     }
     
-    NSMutableArray *array = nil;
+    NSMutableArray<GDataXMLNode*> *array = nil;
     
     if (xmlNode_ != NULL && xmlNode_->properties != NULL) {
         
@@ -1684,11 +1674,10 @@ static void RegisterNamespaces(NSDictionary *namespaces, xmlXPathContextPtr xpat
 @end
 
 
-@interface GDataXMLDocument ()
-{
+@interface GDataXMLDocument () {
 @protected
-    xmlDoc* xmlDoc_; // strong; always free'd in dealloc
-    NSStringEncoding _encoding;
+  xmlDoc* xmlDoc_; // strong; always free'd in dealloc
+  NSStringEncoding _encoding;
 }
 
 - (void)addStringsCacheToDoc;
@@ -1930,23 +1919,23 @@ const char *IANAEncodingCStringFromNSStringEncoding(NSStringEncoding encoding)
     }
 }
 
-- (NSArray *)nodesForXPath:(NSString *)xpath error:(NSError **)error {
+- (NSArray<GDataXMLNode*> *)nodesForXPath:(NSString *)xpath error:(NSError **)error {
     return [self nodesForXPath:xpath namespaces:nil error:error];
 }
 
 - (GDataXMLNode *)firstNodeForXPath:(NSString *)xpath error:(NSError **)error {
-	NSArray *nodes = [self nodesForXPath:xpath error:error];
+	NSArray<GDataXMLNode*> *nodes = [self nodesForXPath:xpath error:error];
 	if (!nodes.count) {
 		return nil;
 	}
 	return [nodes objectAtIndex:0];
 }
 
-- (NSArray *)nodesForXPath:(NSString *)xpath
-                namespaces:(NSDictionary *)namespaces
-                     error:(NSError **)error {
+- (NSArray<GDataXMLNode*> *)nodesForXPath:(NSString *)xpath
+                               namespaces:(NSDictionary *)namespaces
+                                    error:(NSError **)error {
 
-    NSMutableArray *array = nil;
+    NSMutableArray<GDataXMLNode*> *array = nil;
     NSInteger errorCode = -1;
     NSDictionary *errorInfo = nil;
 
