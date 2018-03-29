@@ -6,4 +6,4 @@ install:
   - sudo gem install xcpretty
 script:
   - pod install
-  - xcodebuild -workspace GDataXML-HTML.xcworkspace -scheme GDataXML-HTML -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=9.0,name=iPhone 6' test | xcpretty -c && exit ${PIPESTATUS[0]}
+  - xcodebuild -workspace GDataXML-HTML.xcworkspace -scheme GDataXML-HTML -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=10.0,name=iPhone 6' test | xcpretty -c && exit ${PIPESTATUS[0]}

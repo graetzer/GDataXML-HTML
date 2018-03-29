@@ -206,9 +206,6 @@ static void RegisterNamespaces(NSDictionary *namespaces, xmlXPathContextPtr xpat
 // getters of the underlying node
 - (xmlNodePtr)XMLNodeCopy;
 
-// search for an underlying attribute
-- (GDataXMLNode *)attributeForXMLNode:(xmlAttrPtr)theXMLNode;
-
 // return an NSString for an xmlChar*, using our strings cache in the
 // document
 - (NSString *)stringFromXMLString:(const xmlChar *)chars;
@@ -220,6 +217,9 @@ static void RegisterNamespaces(NSDictionary *namespaces, xmlXPathContextPtr xpat
 @end
 
 @interface GDataXMLElement ()
+
+// search for an underlying attribute
+- (GDataXMLNode *)attributeForXMLNode:(xmlAttrPtr)theXMLNode;
 
 + (void)fixUpNamespacesForNode:(xmlNodePtr)nodeToFix
             graftingToTreeNode:(xmlNodePtr)graftPointNode;
@@ -1350,13 +1350,11 @@ static void RegisterNamespaces(NSDictionary *namespaces, xmlXPathContextPtr xpat
     }
 }
 
-- (GDataXMLNode *)attributeForXMLNode:(xmlAttrPtr)theXMLNode {
+- (GDataXMLNode *)attributeForXMLNode:(xmlAttrPtr)theXMLNode; {
     // search the cached attributes list for the GDataXMLNode with
     // the underlying xmlAttrPtr
-    NSArray *attributes = [self attributes];
-    
+    NSArray<GDataXMLNode*> *attributes = [self attributes];
     for (GDataXMLNode *attr in attributes) {
-        
         if (theXMLNode == (xmlAttrPtr) [attr XMLNode]) {
             return attr;
         }
