@@ -38,7 +38,7 @@
 @class GDataXMLElement, GDataXMLDocument;
 
 
-static const int kGDataXMLParseOptions = (XML_PARSE_NOCDATA | XML_PARSE_NOBLANKS);
+static const int kGDataXMLParseOptions = (XML_PARSE_NOCDATA | XML_PARSE_NOBLANKS | XML_PARSE_HUGE);
 static const int kGDataHTMLParseOptions = (HTML_PARSE_NOWARNING | HTML_PARSE_NOERROR);
 
 // dictionary key callbacks for string cache
